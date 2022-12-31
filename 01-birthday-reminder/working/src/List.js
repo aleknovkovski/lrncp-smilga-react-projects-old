@@ -1,6 +1,8 @@
 import React from 'react';
 
-const List = () => {
+const List = (props) => {
+  let data = props.data;
+  console.log(data);
   return (
     <>
 
