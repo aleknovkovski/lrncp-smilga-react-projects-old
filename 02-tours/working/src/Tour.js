@@ -5,12 +5,8 @@ const Tour = (props) => {
     const fullInfo = props.tourData.info
     const shortenedInfo = fullInfo.slice(0, 225) + "..."
     const [isShortened, setIsShortened] = useState(true)
-    function handleLength() {
-        if(isShortened) {
-            setIsShortened(false)
-        } else {
-            setIsShortened(true)
-        }
+    function toggleLength() {
+        setIsShortened(!isShortened)
     }
     return (
         <article className="single-tour">
@@ -21,7 +17,7 @@ const Tour = (props) => {
                 </div>
                 <p>
                     {isShortened ? shortenedInfo : fullInfo}
-                    <button onClick={handleLength}>
+                    <button onClick={toggleLength}>
                         {isShortened ? "read more" : "read less"}
                     </button>
                 </p>
