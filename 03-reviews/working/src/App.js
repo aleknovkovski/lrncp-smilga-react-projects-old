@@ -4,7 +4,7 @@ import data from "./data";
 
 function App() {
   const [currentReview, setCurrentReview] = useState(data[0])
-  return <h2>{currentReview.name}</h2>;
+  return <Review data={currentReview}/>;
 }
 
 export default App;
