@@ -12,6 +12,7 @@ function App() {
     const toursData = await response.json()
     console.log(toursData)
     setTours(toursData)
+    setIsLoading(false)
   }
 
   useEffect(()=> {
