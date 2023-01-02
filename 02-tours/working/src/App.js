@@ -6,10 +6,12 @@ import Tours from './Tours'
 const url = 'https://course-api.com/react-tours-project'
 function App() {
   const [isLoading, setIsLoading] = useState(true)
+  const [tours, setTours] = useState([])
   async function fetchTours() {
     const response = await fetch(url)
     const toursData = await response.json()
     console.log(toursData)
+    setTours(toursData)
   }
 
   useEffect(()=> {
@@ -19,7 +21,7 @@ function App() {
   if(isLoading) {
     return <Loading />
   } else {
-    return <Tours />
+    return <Tours tours={tours}/>
   }
 }
 
