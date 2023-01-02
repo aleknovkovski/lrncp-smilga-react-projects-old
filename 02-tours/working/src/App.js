@@ -14,6 +14,9 @@ function App() {
     setTours(toursData)
     setIsLoading(false)
   }
+  function removeTour(e) {
+    const tourId = e.target.dataset.tourId
+  }
 
   useEffect(()=> {
     fetchTours()
@@ -24,7 +27,7 @@ function App() {
   } else {
     return (
         <main>
-          <Tours tours={tours}/>
+          <Tours tours={tours} removeHandler={removeTour}/>
         </main>
     )
   }
