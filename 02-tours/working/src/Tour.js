@@ -21,7 +21,9 @@ const Tour = (props) => {
                 </div>
                 <p>
                     {isShortened ? shortenedInfo : fullInfo}
-                    <button onClick={handleLength}>read more</button>
+                    <button onClick={handleLength}>
+                        {isShortened ? "read more" : "read less"}
+                    </button>
                 </p>
 
                 <button
