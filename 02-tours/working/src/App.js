@@ -16,6 +16,10 @@ function App() {
   }
   function removeTour(e) {
     const tourId = e.target.dataset.tourId
+    const newTours = tours.filter((tour)=> {
+      return tour.id != tourId
+    })
+    setTours(newTours)
   }
 
   useEffect(()=> {
