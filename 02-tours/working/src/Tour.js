@@ -7,8 +7,8 @@ const Tour = (props) => {
           <footer>
               <div className="tour-info">
                   <h4>{props.tourData.name}</h4>
-                  <p>{props.tourData.info}</p>
               </div>
+              <p>{props.tourData.info}</p>
           </footer>
       </article>
   );
