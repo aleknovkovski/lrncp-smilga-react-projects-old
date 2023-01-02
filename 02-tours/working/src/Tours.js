@@ -16,7 +16,7 @@ if(props.tours.length) {
   return (
       <div className='title'>
         <h1>No Tours Left</h1>
-        <button className='btn'>refresh</button>
+        <button className='btn' onClick={props.refreshHandler}>refresh</button>
       </div>
   )
 }

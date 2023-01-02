@@ -22,6 +22,10 @@ function App() {
     setTours(newTours)
   }
 
+  function refreshTours() {
+    setIsLoading(true)
+  }
+
   useEffect(()=> {
     fetchTours()
   },[])
@@ -31,7 +35,7 @@ function App() {
   } else {
     return (
         <main>
-          <Tours tours={tours} removeHandler={removeTour}/>
+          <Tours tours={tours} removeHandler={removeTour} refreshHandler={refreshTours}/>
         </main>
     )
   }
