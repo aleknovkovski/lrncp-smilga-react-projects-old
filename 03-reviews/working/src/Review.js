@@ -14,6 +14,8 @@ const Review = (props) => {
                     <img src={props.data.image} alt="" className='person-img'/>
                 </div>
                 <h4 className='author'>{props.data.name}</h4>
+                <p className='job'>{props.data.job}</p>
+                <p className='info'>{props.data.text}</p>
             </article>
         </section>
     );
