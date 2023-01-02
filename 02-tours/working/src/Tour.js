@@ -4,6 +4,7 @@ import React, {useState} from 'react';
 const Tour = (props) => {
     const fullInfo = props.tourData.info
     const shortenedInfo = fullInfo.slice(0, 225) + "..."
+    const [isShortened, setIsShortened] = useState(true)
 
     return (
         <article className="single-tour">
@@ -12,7 +13,7 @@ const Tour = (props) => {
                 <div className="tour-info">
                     <h4>{props.tourData.name}</h4>
                 </div>
-                <p>{shortenedInfo}</p>
+                <p>{isShortened ? shortenedInfo : fullInfo}</p>
                 <button
                     onClick={props.removeHandler}
                     data-tour-id={props.tourData.id}
