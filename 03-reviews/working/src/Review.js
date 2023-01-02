@@ -17,8 +17,12 @@ const Review = (props) => {
                 <p className='job'>{props.data.job}</p>
                 <p className='info'>{props.data.text}</p>
                 <div className="button-container">
-                    <button className="prev-btn"><FaChevronLeft/></button>
-                    <button className="next-btn"><FaChevronRight/></button>
+                    <button className="prev-btn" onClick={()=> props.handleChange('prev')}>
+                        <FaChevronLeft/>
+                    </button>
+                    <button className="next-btn" onClick={()=> props.handleChange('next')}>
+                        <FaChevronRight/>
+                    </button>
                 </div>
             </article>
         </section>
