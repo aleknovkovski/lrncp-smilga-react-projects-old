@@ -24,6 +24,9 @@ const Review = (props) => {
                         <FaChevronRight/>
                     </button>
                 </div>
+                <button className="random-btn" onClick={()=> props.handleChange('random')}>
+                    surprise me
+                </button>
             </article>
         </section>
     );
