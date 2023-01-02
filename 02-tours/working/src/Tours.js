@@ -1,14 +1,14 @@
 import React from 'react';
 import Tour from './Tour';
 const Tours = (props) => {
-  const tourLiItems = props.tours.map((tour)=> {
-    return <li key={tour.id}>{tour.name}</li>
+  const tourItems = props.tours.map((tour)=> {
+    return <Tour key={tour.id} tourData={tour}/>
   });
 
   return (
-      <ul>
-        {tourLiItems}
-      </ul>
+      <div>
+        {tourItems}
+      </div>
   )
 };
 
