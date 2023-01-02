@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+function removeTour(e) {
+    const tourId = e.target.dataset.tourId
+}
 
 const Tour = (props) => {
   return (
@@ -9,6 +12,12 @@ const Tour = (props) => {
                   <h4>{props.tourData.name}</h4>
               </div>
               <p>{props.tourData.info}</p>
+              <button
+                  onClick={removeTour}
+                  data-tour-id={props.tourData.id}
+                  className="delete-btn">
+                  not interested
+              </button>
           </footer>
       </article>
   );
