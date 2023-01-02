@@ -12,6 +12,9 @@ const Review = (props) => {
             <article className='review'>
                 <div className='img-container'>
                     <img src={props.data.image} alt="" className='person-img'/>
+                    <span className='quote-icon'>
+                      <FaQuoteRight />
+                    </span>
                 </div>
                 <h4 className='author'>{props.data.name}</h4>
                 <p className='job'>{props.data.job}</p>
