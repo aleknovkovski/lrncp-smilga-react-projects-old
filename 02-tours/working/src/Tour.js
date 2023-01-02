@@ -2,6 +2,9 @@ import React, {useState} from 'react';
 
 
 const Tour = (props) => {
+    const fullInfo = props.tourData.info
+    const shortenedInfo = fullInfo.slice(0, 225) + "..."
+
     return (
         <article className="single-tour">
             <img src={props.tourData.image} alt={props.tourData.name}/>
@@ -9,7 +12,7 @@ const Tour = (props) => {
                 <div className="tour-info">
                     <h4>{props.tourData.name}</h4>
                 </div>
-                <p>{props.tourData.info}</p>
+                <p>{shortenedInfo}</p>
                 <button
                     onClick={props.removeHandler}
                     data-tour-id={props.tourData.id}
