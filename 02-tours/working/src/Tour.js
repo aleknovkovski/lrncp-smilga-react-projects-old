@@ -1,24 +1,24 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
 
 const Tour = (props) => {
-  return (
-      <article className="single-tour">
-          <img src={props.tourData.image} alt={props.tourData.name}/>
-          <footer>
-              <div className="tour-info">
-                  <h4>{props.tourData.name}</h4>
-              </div>
-              <p>{props.tourData.info}</p>
-              <button
-                  onClick={props.removeHandler}
-                  data-tour-id={props.tourData.id}
-                  className="delete-btn">
-                  not interested
-              </button>
-          </footer>
-      </article>
-  );
+    return (
+        <article className="single-tour">
+            <img src={props.tourData.image} alt={props.tourData.name}/>
+            <footer>
+                <div className="tour-info">
+                    <h4>{props.tourData.name}</h4>
+                </div>
+                <p>{props.tourData.info}</p>
+                <button
+                    onClick={props.removeHandler}
+                    data-tour-id={props.tourData.id}
+                    className="delete-btn">
+                    not interested
+                </button>
+            </footer>
+        </article>
+    );
 };
 
 export default Tour;
