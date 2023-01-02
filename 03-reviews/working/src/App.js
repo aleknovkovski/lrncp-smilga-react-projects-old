@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Review from './Review';
 import data from "./data";
 
 function App() {
-  return <h2>reviews project setup</h2>;
+  const [currentReview, setCurrentReview] = useState(data[0])
+  return <h2>{currentReview.name}</h2>;
 }
 
 export default App;
