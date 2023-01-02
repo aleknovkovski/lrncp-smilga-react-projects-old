@@ -13,7 +13,11 @@ const Tour = (props) => {
                 <div className="tour-info">
                     <h4>{props.tourData.name}</h4>
                 </div>
-                <p>{isShortened ? shortenedInfo : fullInfo}</p>
+                <p>
+                    {isShortened ? shortenedInfo : fullInfo}
+                    <button>read more</button>
+                </p>
+
                 <button
                     onClick={props.removeHandler}
                     data-tour-id={props.tourData.id}
