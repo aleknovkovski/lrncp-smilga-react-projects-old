@@ -27,8 +27,10 @@ function App() {
   }
 
   useEffect(()=> {
-    fetchTours()
-  },[])
+    if(isLoading) {
+      fetchTours()
+    }
+  },[isLoading])
 
   if(isLoading) {
     return <Loading />
