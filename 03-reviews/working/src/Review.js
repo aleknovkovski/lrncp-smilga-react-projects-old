@@ -16,6 +16,10 @@ const Review = (props) => {
                 <h4 className='author'>{props.data.name}</h4>
                 <p className='job'>{props.data.job}</p>
                 <p className='info'>{props.data.text}</p>
+                <div className="button-container">
+                    <button className="prev-btn"><FaChevronLeft/></button>
+                    <button className="next-btn"><FaChevronRight/></button>
+                </div>
             </article>
         </section>
     );
