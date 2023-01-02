@@ -5,7 +5,13 @@ import Tours from './Tours'
 // I SWITCHED TO PERMANENT DOMAIN
 const url = 'https://course-api.com/react-tours-project'
 function App() {
-  return <h2>Tours Project Setup</h2>
+  const [isLoading, setIsLoading] = useState(true)
+
+  if(isLoading) {
+    return <Loading />
+  } else {
+    return <Tours />
+  }
 }
 
 export default App
