@@ -10,6 +10,9 @@ const Review = (props) => {
                 <div className='underline'></div>
             </div>
             <article className='review'>
+                <div className='img-container'>
+                    <img src={props.data.image} alt="" className='person-img'/>
+                </div>
                 <h2>{props.data.name}</h2>
             </article>
         </section>
