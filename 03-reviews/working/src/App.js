@@ -3,10 +3,10 @@ import Review from './Review';
 import data from "./data";
 
 function App() {
-  const [currentReview, setCurrentReview] = useState(data[0])
+  const [currentReview, setCurrentReview] = useState(0)
   return (
       <main>
-          <Review data={currentReview}/>
+          <Review data={data[currentReview]}/>
       </main>
   );
 }
