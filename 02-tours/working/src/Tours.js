@@ -8,9 +8,15 @@ const Tours = (props) => {
 
 if(props.tours.length) {
   return (
-      <div>
-        {tourItems}
-      </div>
+    <section>
+        <div className="title">
+            <h2>our tours</h2>
+            <div className="underline"></div>
+        </div>
+        <div>
+            {tourItems}
+        </div>
+    </section>
   )
 } else {
   return (

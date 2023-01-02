@@ -14,6 +14,7 @@ const Tour = (props) => {
             <footer>
                 <div className="tour-info">
                     <h4>{props.tourData.name}</h4>
+                    <h4 className="tour-price">${props.tourData.price}</h4>
                 </div>
                 <p>
                     {isShortened ? shortenedInfo : fullInfo}
