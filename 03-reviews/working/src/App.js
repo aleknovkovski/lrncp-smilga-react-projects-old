@@ -18,7 +18,9 @@ function App() {
                 setCurrentReview((prev)=> prev+1)
             }
         } else if(changeType==='random') {
-            console.log('random')
+            const random = Math.floor(Math.random() * data.length);
+            console.log(random)
+            setCurrentReview(random)
         }
     }
 
