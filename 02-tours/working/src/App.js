@@ -22,7 +22,11 @@ function App() {
   if(isLoading) {
     return <Loading />
   } else {
-    return <Tours tours={tours}/>
+    return (
+        <main>
+          <Tours tours={tours}/>
+        </main>
+    )
   }
 }
 
