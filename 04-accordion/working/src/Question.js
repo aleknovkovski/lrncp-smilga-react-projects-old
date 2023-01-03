@@ -8,7 +8,9 @@ const Question = ({question: {info, title}}) => {
       <article className="question">
         <header>
           <h4>{title}</h4>
-          <button className="btn"><AiOutlinePlus /></button>
+          <button className="btn">
+              {opened ? <AiOutlineMinus /> : <AiOutlinePlus />}
+          </button>
         </header>
           {infoArea}
       </article>
