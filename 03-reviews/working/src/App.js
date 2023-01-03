@@ -20,6 +20,9 @@ function App() {
         } else if(changeType==='random') {
             const random = Math.floor(Math.random() * data.length);
             console.log(random)
+            if (currentReview===random) {
+                console.log('current review same as random')
+            }
             setCurrentReview(random)
         }
     }
