@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
-const Question = ({question: {info, title}}) => {
+const Question = ({question: {info, title, id}, handleToggle}) => {
     const [opened, setOpened] = useState(false)
     const infoArea = opened ? <p>{info}</p> : null
 
@@ -8,7 +8,7 @@ const Question = ({question: {info, title}}) => {
       <article className="question">
         <header>
           <h4>{title}</h4>
-          <button className="btn" onClick={()=> setOpened(!opened)}>
+          <button className="btn" onClick={()=> handleToggle(id)}>
               {opened ? <AiOutlineMinus /> : <AiOutlinePlus />}
           </button>
         </header>
