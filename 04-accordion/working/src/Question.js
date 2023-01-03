@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
-const Question = ({question: {info, title, id}, handleToggle}) => {
-    const [opened, setOpened] = useState(false)
+const Question = ({question: {info, title, id, opened}, handleToggle}) => {
+    // const [opened, setOpened] = useState(false)
     const infoArea = opened ? <p>{info}</p> : null
 
   return (
