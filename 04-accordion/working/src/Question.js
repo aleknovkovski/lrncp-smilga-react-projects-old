@@ -5,7 +5,7 @@ const Question = ({question}) => {
       <article className="question">
         <header>
           <h4>{question.title}</h4>
-          <button className="btn">+</button>
+          <button className="btn"><AiOutlinePlus /></button>
         </header>
       </article>
   );
