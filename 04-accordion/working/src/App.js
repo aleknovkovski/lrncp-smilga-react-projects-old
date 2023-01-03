@@ -3,7 +3,13 @@ import data from './data';
 import SingleQuestion from './Question';
 
 function App() {
-    const [questions, setQuestions] = useState(data)
+
+    const initialQuestions = data.map((question)=> {
+        return {...question, opened: false}
+    })
+
+    const [questions, setQuestions] = useState(initialQuestions)
+
 
     function handleToggle(id) {
         console.log('need to toggle id of ' + id)
