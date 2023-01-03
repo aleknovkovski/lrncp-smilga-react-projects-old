@@ -4,7 +4,7 @@ import SingleQuestion from './Question';
 
 const questionsList = data.map((question)=> {
   return (
-      <SingleQuestion question={question}/>
+      <SingleQuestion question={question} key={question.id}/>
   )
 })
 
