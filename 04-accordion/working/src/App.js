@@ -4,12 +4,7 @@ import SingleQuestion from './Question';
 
 const questionsList = data.map((question)=> {
   return (
-      <article className="question">
-          <header>
-              <h4>{question.title}</h4>
-              <button className="btn">+</button>
-          </header>
-      </article>
+      <SingleQuestion question={question}/>
   )
 })
 
