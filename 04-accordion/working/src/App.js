@@ -3,7 +3,13 @@ import data from './data';
 import SingleQuestion from './Question';
 
 const questionsList = data.map((question)=> {
-  return <h4>{question.title}</h4>
+  return (
+      <article className="question">
+          <header>
+              <h4>{question.title}</h4>
+          </header>
+      </article>
+  )
 })
 
 function App() {
