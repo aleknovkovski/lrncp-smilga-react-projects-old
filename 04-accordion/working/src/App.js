@@ -7,6 +7,7 @@ const questionsList = data.map((question)=> {
       <article className="question">
           <header>
               <h4>{question.title}</h4>
+              <button className="btn">+</button>
           </header>
       </article>
   )
