@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import data from './data';
 import SingleQuestion from './Question';
+import question from "./Question";
 
 function App() {
 
@@ -12,7 +13,15 @@ function App() {
 
 
     function handleToggle(id) {
-        console.log('need to toggle id of ' + id)
+        const newQuestions = questions.map((question)=> {
+            if(question.id === id) {
+                return {...question, opened: true}
+            } else {
+                return {...question, opened: false}
+            }
+        })
+
+        setQuestions(newQuestions)
     }
 
     const questionsList = questions.map((question)=> {
