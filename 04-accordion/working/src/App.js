@@ -7,7 +7,14 @@ const questionsList = data.map((question)=> {
 })
 
 function App() {
-  return questionsList
+  return (
+      <div className="container">
+        <h3>questions and answers about login</h3>
+          <section className="info">
+              {questionsList}
+          </section>
+      </div>
+  )
 }
 
 export default App;
