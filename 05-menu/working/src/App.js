@@ -5,6 +5,7 @@ import items from './data';
 
 function App() {
     console.log(items)
+    const [shownItems, setShownItems] = useState(items)
     function handleMenuClicks(e) {
         console.log(e.target.innerHTML)
     }
@@ -16,7 +17,7 @@ function App() {
           <div className="underline"></div>
         </div>
         <Categories handleClick={handleMenuClicks}/>
-        <Menu items={items}/>
+        <Menu items={shownItems}/>
       </section>
   );
 }
