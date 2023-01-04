@@ -22,13 +22,27 @@ function App() {
         )
     }))
 
-    useEffect(()=> {
-        const timeout = setTimeout(()=>{
+    function changeSlide(direction) {
+        if(direction === 'forward') {
             if(currentSlide===data.length-1) {
                 setCurrentSlide(0)
             } else {
                 setCurrentSlide((currentSlide)=> currentSlide+1)
             }
+        }
+
+        if(direction === 'backward') {
+            if(currentSlide===0) {
+                setCurrentSlide(data.length-1)
+            } else {
+                setCurrentSlide((currentSlide)=> currentSlide-1)
+            }
+        }
+    }
+
+    useEffect(()=> {
+        const timeout = setTimeout(()=>{
+            changeSlide('forward')
         },1000)
 
         return () => clearTimeout(timeout);
