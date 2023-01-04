@@ -55,8 +55,12 @@ function App() {
             </div>
             <div className="section-center">
                 {slidesMarkup}
-                <button className="prev">{"<<"}</button>
-                <button className="next">{">>"}</button>
+                <button className="prev" onClick={()=> changeSlide('backward')}>
+                    {"<<"}
+                </button>
+                <button className="next" onClick={()=> changeSlide('forward')}>
+                    {">>"}
+                </button>
             </div>
         </section>
     );
