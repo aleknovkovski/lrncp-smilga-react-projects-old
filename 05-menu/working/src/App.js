@@ -4,6 +4,7 @@ import Categories from './Categories';
 import items from './data';
 
 function App() {
+    console.log(items)
   return (
       <section className="menu section">
         <div className="title">
