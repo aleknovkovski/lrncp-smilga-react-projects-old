@@ -7,7 +7,15 @@ function App() {
     console.log(items)
     const [shownItems, setShownItems] = useState(items)
     function handleMenuClicks(e) {
-        console.log(e.target.innerHTML)
+        const clickedCategory = e.target.innerHTML
+        if (clickedCategory==='all') {
+            setShownItems(items)
+        } else {
+            const filteredItems = items.filter((item)=> {
+                return item.category === clickedCategory
+            })
+            setShownItems(filteredItems)
+        }
     }
 
   return (
