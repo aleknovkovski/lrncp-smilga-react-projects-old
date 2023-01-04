@@ -6,9 +6,11 @@ const url = 'https://course-api.com/react-tabs-project'
 function App() {
     const [jobs, setJobs] = useState([])
     const [activeJob, setActiveJob] = useState(0)
+    const [loading, setLoading] = useState(true)
     async function fetchJobs() {
         const response = await fetch(url)
         setJobs(await response.json())
+        setLoading(false)
     }
 
     useEffect(()=> {
@@ -25,6 +27,14 @@ function App() {
         )
     })
 
+    if (loading) {
+        return (
+            <section className="section loading">
+                <h1>Loading...</h1>
+            </section>
+        )
+    }
+
   return (
       <section className="section">
         <div className="title">
@@ -35,7 +45,16 @@ function App() {
             <div className="btn-container">
                 {buttonsMarkup}
             </div>
-            <article className="job-info"></article>
+            <article className="job-info">
+                <h3>{jobs[activeJob].title}</h3>
+                <h3>{jobs[activeJob].company}</h3>
+                <p className="job-date">{jobs[activeJob].dates}</p>
+                {jobs[activeJob].duties.map((duty)=> {
+                    return <div className="job-desc">
+                        >> <p>{duty}</p>
+                    </div>
+                })}
+            </article>
         </div>
         <button className="btn">
             more info
