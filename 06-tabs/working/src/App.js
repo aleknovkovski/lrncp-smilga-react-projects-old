@@ -35,6 +35,8 @@ function App() {
         )
     }
 
+    const {title, duties, company, dates} = jobs[activeJob]
+
   return (
       <section className="section">
         <div className="title">
@@ -46,10 +48,10 @@ function App() {
                 {buttonsMarkup}
             </div>
             <article className="job-info">
-                <h3>{jobs[activeJob].title}</h3>
-                <h3>{jobs[activeJob].company}</h3>
-                <p className="job-date">{jobs[activeJob].dates}</p>
-                {jobs[activeJob].duties.map((duty)=> {
+                <h3>{title}</h3>
+                <h3>{company}</h3>
+                <p className="job-date">{dates}</p>
+                {duties.map((duty)=> {
                     return <div className="job-desc">
                         >> <p>{duty}</p>
                     </div>
