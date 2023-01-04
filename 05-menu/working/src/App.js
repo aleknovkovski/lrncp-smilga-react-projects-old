@@ -7,7 +7,8 @@ function App() {
     console.log(items)
     const [shownItems, setShownItems] = useState(items)
 
-    const categories = Array.from(new Set(items.map((item) => item.category)));
+    const uniqueCategories = new Set(items.map((item) => item.category));
+    const categories = ['all', ...uniqueCategories]
 
     function handleMenuClicks(e) {
         const clickedCategory = e.target.innerHTML
