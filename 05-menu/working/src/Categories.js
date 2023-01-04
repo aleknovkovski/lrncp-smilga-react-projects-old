@@ -5,8 +5,8 @@ const Categories = ({handleClick, categories}) => {
 
   return (<div className='btn-container' onClick={handleClick}>
     {
-      categories.map((category)=> {
-        return <button className="filter-btn" data-category={category}>
+      categories.map((category, index)=> {
+        return <button className="filter-btn" data-category={category} key={index}>
           {category}
         </button>
       })
