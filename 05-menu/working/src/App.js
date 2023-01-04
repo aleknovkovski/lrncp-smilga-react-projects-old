@@ -11,7 +11,7 @@ function App() {
     const categories = ['all', ...uniqueCategories]
 
     function handleMenuClicks(e) {
-        const clickedCategory = e.target.innerHTML
+        const clickedCategory = e.target.dataset.category
         if (clickedCategory==='all') {
             setShownItems(items)
         } else {
