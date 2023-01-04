@@ -14,6 +14,18 @@ function App() {
         return <article className={classNow}><p>{`slide ${index}`}</p></article>
     }))
 
+    useEffect(()=> {
+        const timeout = setTimeout(()=>{
+            if(currentSlide===data.length-1) {
+                setCurrentSlide(0)
+            } else {
+                setCurrentSlide((currentSlide)=> currentSlide+1)
+            }
+        },1000)
+
+        return () => clearTimeout(timeout);
+    })
+
     return (
         <section className="section">
             <div className="title">
