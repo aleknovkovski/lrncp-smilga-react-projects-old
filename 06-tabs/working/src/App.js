@@ -19,7 +19,7 @@ function App() {
         const active = index === activeJob
         const jobClass = `job-btn ${active ? 'active-btn' : 'false'}`
         return (
-            <button className={jobClass}>
+            <button className={jobClass} key={index} onClick={()=>setActiveJob(index)}>
                 {job.company}
             </button>
         )
