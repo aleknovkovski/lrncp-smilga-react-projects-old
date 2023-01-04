@@ -7,9 +7,13 @@ function App() {
     const [currentSlide, setCurrentSlide] = useState(0)
 
     const slidesMarkup = (data.map((slide, index)=> {
-        let classNow = currentSlide === index ? "activeSlide" : "nextSlide"
-        if((index === currentSlide -1) || index === data.length && currentSlide === 0) {
+        let classNow = ""
+        if (index === currentSlide) {
+            classNow = "activeSlide"
+        } else if((index === currentSlide -1) || index === data.length -1 && currentSlide === 0) {
             classNow = "lastSlide"
+        } else {
+            classNow = "nextSlide"
         }
 
         return (
