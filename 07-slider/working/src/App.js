@@ -60,10 +60,10 @@ function App() {
             <div className="section-center">
                 {slidesMarkup}
                 <button className="prev" onClick={()=> changeSlide('backward')}>
-                    {"<<"}
+                    <FiChevronLeft />
                 </button>
                 <button className="next" onClick={()=> changeSlide('forward')}>
-                    {">>"}
+                    <FiChevronRight />
                 </button>
             </div>
         </section>
