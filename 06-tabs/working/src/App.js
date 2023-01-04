@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import { FaAngleDoubleRight } from 'react-icons/fa'
 // ATTENTION!!!!!!!!!!
 // I SWITCHED TO PERMANENT DOMAIN
 const url = 'https://course-api.com/react-tabs-project'
@@ -54,7 +55,8 @@ function App() {
                     <p className="job-date">{dates}</p>
                     {duties.map((duty) => {
                         return <div className="job-desc">
-                            >> <p>{duty}</p>
+                            <FaAngleDoubleRight className="job-icon"></FaAngleDoubleRight>
+                            <p>{duty}</p>
                         </div>
                     })}
                 </article>
