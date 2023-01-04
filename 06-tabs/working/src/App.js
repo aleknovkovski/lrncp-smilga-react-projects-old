@@ -7,21 +7,22 @@ function App() {
     const [jobs, setJobs] = useState([])
     const [activeJob, setActiveJob] = useState(0)
     const [loading, setLoading] = useState(true)
+
     async function fetchJobs() {
         const response = await fetch(url)
         setJobs(await response.json())
         setLoading(false)
     }
 
-    useEffect(()=> {
+    useEffect(() => {
         fetchJobs()
-    },[])
+    }, [])
 
-    const buttonsMarkup = jobs.map((job, index)=> {
+    const buttonsMarkup = jobs.map((job, index) => {
         const active = index === activeJob
         const jobClass = `job-btn ${active ? 'active-btn' : 'false'}`
         return (
-            <button className={jobClass} key={index} onClick={()=>setActiveJob(index)}>
+            <button className={jobClass} key={index} onClick={() => setActiveJob(index)}>
                 {job.company}
             </button>
         )
@@ -37,32 +38,32 @@ function App() {
 
     const {title, duties, company, dates} = jobs[activeJob]
 
-  return (
-      <section className="section">
-        <div className="title">
-            <h2>Experience</h2>
-            <div className="underline"></div>
-        </div>
-        <div className="jobs-center">
-            <div className="btn-container">
-                {buttonsMarkup}
+    return (
+        <section className="section">
+            <div className="title">
+                <h2>Experience</h2>
+                <div className="underline"></div>
             </div>
-            <article className="job-info">
-                <h3>{title}</h3>
-                <h3>{company}</h3>
-                <p className="job-date">{dates}</p>
-                {duties.map((duty)=> {
-                    return <div className="job-desc">
-                        >> <p>{duty}</p>
-                    </div>
-                })}
-            </article>
-        </div>
-        <button className="btn">
-            more info
-        </button>
-      </section>
-  )
+            <div className="jobs-center">
+                <div className="btn-container">
+                    {buttonsMarkup}
+                </div>
+                <article className="job-info">
+                    <h3>{title}</h3>
+                    <h3>{company}</h3>
+                    <p className="job-date">{dates}</p>
+                    {duties.map((duty) => {
+                        return <div className="job-desc">
+                            >> <p>{duty}</p>
+                        </div>
+                    })}
+                </article>
+            </div>
+            <button className="btn">
+                more info
+            </button>
+        </section>
+    )
 }
 
 export default App
