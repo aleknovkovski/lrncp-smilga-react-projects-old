@@ -6,6 +6,9 @@ import items from './data';
 function App() {
     console.log(items)
     const [shownItems, setShownItems] = useState(items)
+
+    const categories = Array.from(new Set(items.map((item) => item.category)));
+
     function handleMenuClicks(e) {
         const clickedCategory = e.target.innerHTML
         if (clickedCategory==='all') {
@@ -24,7 +27,7 @@ function App() {
           <h2>our menu</h2>
           <div className="underline"></div>
         </div>
-        <Categories handleClick={handleMenuClicks}/>
+        <Categories handleClick={handleMenuClicks} categories={categories}/>
         <Menu items={shownItems}/>
       </section>
   );
