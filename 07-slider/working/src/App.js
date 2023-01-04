@@ -4,13 +4,15 @@ import {FaQuoteRight} from 'react-icons/fa';
 import data from './data';
 
 function App() {
+    const [currentSlide, setCurrentSlide] = useState(0)
 
-    const slidesMarkup = (<>
-        <article className="lastSlide"><p>aaa</p></article>
-        <article className="activeSlide"><p>bbb</p></article>
-        <article className="nextSlide"><p>ccc</p></article>
-        <article className="nextSlide"><p>ddd</p></article>
-    </>)
+    const slidesMarkup = (data.map((slide, index)=> {
+        let classNow = currentSlide === index ? "activeSlide" : "nextSlide"
+        if((index === currentSlide -1) || index === data.length && currentSlide === 0) {
+            classNow = "lastSlide"
+        }
+        return <article className={classNow}><p>{`slide ${index}`}</p></article>
+    }))
 
     return (
         <section className="section">
