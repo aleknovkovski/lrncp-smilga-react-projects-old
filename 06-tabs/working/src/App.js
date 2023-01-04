@@ -1,9 +1,19 @@
-import React, { useState, useEffect } from 'react'
-import { FaAngleDoubleRight } from 'react-icons/fa'
+import React, {useEffect, useState} from 'react'
 // ATTENTION!!!!!!!!!!
 // I SWITCHED TO PERMANENT DOMAIN
 const url = 'https://course-api.com/react-tabs-project'
+
 function App() {
+    const [jobs, setJobs] = useState([])
+    async function fetchJobs() {
+        const response = await fetch(url)
+        setJobs(await response.json())
+    }
+
+    useEffect(()=> {
+        fetchJobs()
+    },[])
+
   return (
       <section className="section">
         <div className="title">
