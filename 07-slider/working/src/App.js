@@ -11,7 +11,15 @@ function App() {
         if((index === currentSlide -1) || index === data.length && currentSlide === 0) {
             classNow = "lastSlide"
         }
-        return <article className={classNow}><p>{`slide ${index}`}</p></article>
+
+        return (
+            <article className={classNow}>
+                <img src={slide.image} alt={slide.name} className="person-img"/>
+                <h4>{slide.name}</h4>
+                <p className="title">{slide.title}</p>
+                <p className="text">{slide.quote}</p>
+            </article>
+        )
     }))
 
     useEffect(()=> {
