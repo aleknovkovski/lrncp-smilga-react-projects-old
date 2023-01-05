@@ -11,8 +11,11 @@ function App() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    if(base[0]==="#" && base.length===7) {
+    try {
+      //   the Values lib throws error if passed color isn't valid color
       setColors(new Values(base).all(10))
+    } catch {
+      console.log("error caught")
     }
   }
 
