@@ -14,7 +14,12 @@ function App() {
     <section className="container">
       <h3>color generator</h3>
       <form>
-        <input type="text" placeholder="#f15025"/>
+        <input
+            type="text"
+            placeholder="#f15025"
+            value={base}
+            onChange={(e)=> setBase(e.target.value)}
+        />
         <button type="submit" className="btn">submit</button>
       </form>
     </section>
