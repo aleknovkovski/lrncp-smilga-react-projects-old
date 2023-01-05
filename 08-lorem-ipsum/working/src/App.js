@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import data from './data';
 function App() {
-  const [paragraphs, setParagraphs] = useState(['testing', 'testing2', 'testing3'])
+  const [paragraphs, setParagraphs] = useState([])
   
   return (
   <section className="section-center">
