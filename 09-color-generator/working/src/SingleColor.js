@@ -10,12 +10,14 @@ async function copyToClipboard(color) {
 }
 
 const SingleColor = ({color: {type, weight, rgb}}) => {
-    const bgColor = {backgroundColor: `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`}
+    const RGBString = rgb.join(",")
+    const HexString = rgbToHex(rgb[0], rgb[1], rgb[2])
+    const bgColor = {backgroundColor: `rgb(${RGBString})`}
     const colorClass = `color ${type==="shade" ? "color-light" : false }`
     return (
       <article className={colorClass} style={bgColor} onClick={()=> copyToClipboard("copied text")}>
           <p className="percent-value">{weight}%</p>
-          <p className="color-value">{rgbToHex(rgb[0], rgb[1], rgb[2])}</p>
+          <p className="color-value">{HexString}</p>
       </article>
   )
 }
