@@ -11,6 +11,13 @@ async function copyToClipboard(color) {
 
 const SingleColor = ({color: {type, weight, rgb}}) => {
     const [alert, setAlert] = useState(false)
+    useEffect(()=> {
+        const timeout = setTimeout(()=> {
+            setAlert(false)
+        }, 2000)
+
+        return () => clearTimeout(timeout)
+    }, [alert])
 
     const RGBString = rgb.join(",")
     const HexString = rgbToHex(rgb[0], rgb[1], rgb[2])
