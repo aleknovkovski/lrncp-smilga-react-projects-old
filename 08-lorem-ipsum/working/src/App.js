@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import data from './data';
 function App() {
-  
+  const [paragraphs, setParagraphs] = useState(['testing', 'testing2', 'testing3'])
   
   return (
   <section className="section-center">
@@ -11,7 +11,13 @@ function App() {
       <input type="number" name="amount" id="amount" value="0"/>
       <button className="btn">generate</button>
     </form>
-    <article className="lorem-text"></article>
+    <article className="lorem-text">
+      {
+        paragraphs.map((paragraph)=> {
+          return <p>{paragraph}</p>
+        })
+      }
+    </article>
   </section>
     )
 }
