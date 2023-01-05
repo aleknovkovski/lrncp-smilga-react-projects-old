@@ -5,10 +5,10 @@ import Values from 'values.js'
 import singleColor from "./SingleColor";
 
 function App() {
-  const defaultValues = new Values('#f15025')
-  console.log(defaultValues.all(10))
-
-  const [colors, setColors] = useState(defaultValues.all(10))
+  const defaultBase = '#f15025'
+  const defaultColors = new Values(defaultBase).all(10)
+  const [base, setBase] = useState(defaultBase)
+  const [colors, setColors] = useState(defaultColors)
 
   return (<>
     <section className="container">
