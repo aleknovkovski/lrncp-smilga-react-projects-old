@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import SingleColor from './SingleColor'
 
 import Values from 'values.js'
-import singleColor from "./SingleColor";
 
 function App() {
   const defaultBase = '#f15025'
@@ -26,7 +25,7 @@ function App() {
     <section className="colors">
       {
         colors.map((color)=> {
-          return singleColor(color)
+          return SingleColor(color)
         })
       }
     </section>
