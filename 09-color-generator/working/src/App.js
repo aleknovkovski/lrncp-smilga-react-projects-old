@@ -9,10 +9,17 @@ function App() {
   const [base, setBase] = useState(defaultBase)
   const [colors, setColors] = useState(defaultColors)
 
+  function handleSubmit(e) {
+    e.preventDefault()
+    if(base[0]==="#" && base.length===7) {
+      setColors(new Values(base).all(10))
+    }
+  }
+
   return (<>
     <section className="container">
       <h3>color generator</h3>
-      <form>
+      <form onClick={handleSubmit}>
         <input
             type="text"
             placeholder="#f15025"
