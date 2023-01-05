@@ -1,7 +1,14 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import data from './data';
 function App() {
   const [paragraphs, setParagraphs] = useState([])
+  const [number, setNumber] = useState(3)
+
+  useEffect(()=> {
+    if (number > 0) {
+      setParagraphs(data.slice(0, number))
+    }
+  })
   
   return (
   <section className="section-center">
