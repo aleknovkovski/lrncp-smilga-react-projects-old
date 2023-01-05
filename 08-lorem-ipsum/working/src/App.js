@@ -21,8 +21,8 @@ function App() {
     </form>
     <article className="lorem-text">
       {
-        paragraphs.map((paragraph)=> {
-          return <p>{paragraph}</p>
+        paragraphs.map((paragraph, index)=> {
+          return <p key={index}>{paragraph}</p>
         })
       }
     </article>
