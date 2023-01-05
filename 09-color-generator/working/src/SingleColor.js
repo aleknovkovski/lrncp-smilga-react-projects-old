@@ -10,14 +10,19 @@ async function copyToClipboard(color) {
 }
 
 const SingleColor = ({color: {type, weight, rgb}}) => {
+    const [alert, setAlert] = useState(false)
+
     const RGBString = rgb.join(",")
     const HexString = rgbToHex(rgb[0], rgb[1], rgb[2])
     const bgColor = {backgroundColor: `rgb(${RGBString})`}
     const colorClass = `color ${type==="shade" ? "color-light" : false }`
     return (
-      <article className={colorClass} style={bgColor} onClick={()=> copyToClipboard(HexString)}>
+      <article className={colorClass} style={bgColor} onClick={()=> {
+          copyToClipboard(HexString).then(r => setAlert(true))
+      }}>
           <p className="percent-value">{weight}%</p>
           <p className="color-value">{HexString}</p>
+          {alert ? <p className="alert">copied to clipboard</p> : null}
       </article>
   )
 }
