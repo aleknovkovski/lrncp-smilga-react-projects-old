@@ -15,7 +15,7 @@ const SingleColor = ({color: {type, weight, rgb}}) => {
     const bgColor = {backgroundColor: `rgb(${RGBString})`}
     const colorClass = `color ${type==="shade" ? "color-light" : false }`
     return (
-      <article className={colorClass} style={bgColor} onClick={()=> copyToClipboard("copied text")}>
+      <article className={colorClass} style={bgColor} onClick={()=> copyToClipboard(HexString)}>
           <p className="percent-value">{weight}%</p>
           <p className="color-value">{HexString}</p>
       </article>
