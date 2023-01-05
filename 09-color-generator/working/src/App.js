@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import SingleColor from './SingleColor'
 
 import Values from 'values.js'
+import singleColor from "./SingleColor";
 
 function App() {
   const defaultValues = new Values('#f15025')
@@ -17,7 +18,13 @@ function App() {
         <button type="submit" className="btn">submit</button>
       </form>
     </section>
-    <section className="colors"></section>
+    <section className="colors">
+      {
+        colors.map((color)=> {
+          return singleColor(color)
+        })
+      }
+    </section>
   </>)
 }
 
