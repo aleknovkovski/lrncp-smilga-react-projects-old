@@ -8,14 +8,16 @@ function App() {
   const defaultColors = new Values(defaultBase).all(10)
   const [base, setBase] = useState(defaultBase)
   const [colors, setColors] = useState(defaultColors)
+  const [error, setError] = useState(false)
 
   function handleSubmit(e) {
     e.preventDefault()
     try {
       //   the Values lib throws error if passed color isn't valid color
       setColors(new Values(base).all(10))
+      setError(false)
     } catch {
-      console.log("error caught")
+      setError(true)
     }
   }
 
@@ -28,6 +30,7 @@ function App() {
             placeholder="#f15025"
             value={base}
             onChange={(e)=> setBase(e.target.value)}
+            className={error ? "error" : null}
         />
         <button type="submit" className="btn">submit</button>
       </form>
