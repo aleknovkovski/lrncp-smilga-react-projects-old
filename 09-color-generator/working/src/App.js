@@ -4,6 +4,8 @@ import SingleColor from './SingleColor'
 import Values from 'values.js'
 
 function App() {
+  const color = new Values('hsl(204deg 100% 50% / 1)')
+  console.log(color.all(10))
   return (<>
     <section className="container">
       <h3>color generator</h3>
