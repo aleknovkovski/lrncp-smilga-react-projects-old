@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import data from './data';
 function App() {
   const [paragraphs, setParagraphs] = useState([])
-  const [number, setNumber] = useState(3)
+  const [number, setNumber] = useState(0)
 
   useEffect(()=> {
     if (number > 0) {
