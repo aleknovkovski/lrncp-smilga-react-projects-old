@@ -3,8 +3,9 @@ import rgbToHex from './utils'
 
 const SingleColor = ({type, weight, rgb}) => {
     const bgColor = {backgroundColor: `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`}
+    const colorClass = `color ${type==="shade" ? "color-light" : false }`
     return (
-      <article className="color" style={bgColor}>
+      <article className={colorClass} style={bgColor}>
           <p className="percent-value">{weight}%</p>
           <p className="color-value">{rgbToHex(rgb[0], rgb[1], rgb[2])}</p>
       </article>
