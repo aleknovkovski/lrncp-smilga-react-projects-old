@@ -31,8 +31,8 @@ function App() {
     </section>
     <section className="colors">
       {
-        colors.map((color)=> {
-          return SingleColor(color)
+        colors.map((color, index)=> {
+          return <SingleColor color={color} key={index}/>
         })
       }
     </section>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import rgbToHex from './utils'
 
-const SingleColor = ({type, weight, rgb}) => {
+const SingleColor = ({color: {type, weight, rgb}}) => {
     const bgColor = {backgroundColor: `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`}
     const colorClass = `color ${type==="shade" ? "color-light" : false }`
     return (
