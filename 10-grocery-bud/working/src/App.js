@@ -4,6 +4,7 @@ import Alert from './Alert'
 
 function App() {
     const [alerting, setAlerting] = useState(true)
+    const [items, setItems] = useState(["a", "b", "c"])
 
     return (
         <section className="section-center">
@@ -16,7 +17,7 @@ function App() {
                 </div>
             </form>
             <div className="grocery-container">
-                <List items={["a", "b", "c"]}/>
+                <List items={items}/>
             </div>
         </section>
     )
