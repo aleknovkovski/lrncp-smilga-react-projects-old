@@ -1,9 +1,26 @@
 import React, { useEffect } from 'react'
 
 const Alert = ({type}) => {
-  const alertType = type==="add" ? "alert-success" : type==="delete" ? "alert-danger" : "false"
+  let alertType, content = ""
+
+  switch (type) {
+    case "add":
+      alertType = "alert-success"
+      content = "item added to the list"
+      break
+    case "delete":
+      alertType = "alert-danger"
+      content = "item removed"
+      break
+    case "edit":
+      alertType = "alert-success"
+      content = "item changed"
+      break
+    default:
+      return
+  }
+
   const alertClass = `alert ${alertType}`
-  const content =  type==="add" ? "item added to the list" : type==="delete" ? "item removed" : null
   return <p className={alertClass}>
     {content}
   </p>
