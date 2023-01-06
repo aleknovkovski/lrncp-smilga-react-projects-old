@@ -7,7 +7,12 @@ const Navbar = () => {
   return (
       <nav>
         <div className='nav-center'>
-          <div className='nav-header'></div>
+          <div className='nav-header'>
+              <img src={logo} alt="logo"/>
+              <button className="nav-toggle">
+                  <FaBars />
+              </button>
+          </div>
           <div className='links-container show-container'>
           </div>
           <ul className="social-icons"></ul>
