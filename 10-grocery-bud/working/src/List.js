@@ -3,7 +3,7 @@ import { FaEdit, FaTrash } from 'react-icons/fa'
 const List = ({items, handleClearing, handleChanges}) => {
     const itemsMarkup = items.map((item)=>{
         return (
-            <article className="grocery-item">
+            <article className="grocery-item" key={item.id}>
                 <p className="title">{item.title}</p>
                 <div className="btn-container">
                     <button className="edit-btn" onClick={handleChanges}>
