@@ -29,7 +29,23 @@ const Navbar = () => {
                   </li>
               </ul>
           </div>
-          <ul className="social-icons"></ul>
+          <ul className="social-icons">
+              <li>
+                  <a href="https://twitter.com">
+                      <FaTwitter />
+                  </a>
+              </li>
+              <li>
+                  <a href="https://twitter.com">
+                      <FaTwitter />
+                  </a>
+              </li>
+              <li>
+                  <a href="https://twitter.com">
+                      <FaTwitter />
+                  </a>
+              </li>
+          </ul>
         </div>
       </nav>
   );
