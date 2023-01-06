@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaEdit, FaTrash } from 'react-icons/fa'
-const List = ({items}) => {
+const List = ({items, handleClearing}) => {
     const itemsMarkup = items.map((item)=>{
         return (
             <article className="grocery-item">
@@ -15,7 +15,7 @@ const List = ({items}) => {
 
   return (<>
       {itemsMarkup}
-      <button className="clear-btn">clear items</button>
+      <button className="clear-btn" onClick={handleClearing}>clear items</button>
   </>)
 }
 

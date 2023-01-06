@@ -6,6 +6,10 @@ function App() {
     const [alerting, setAlerting] = useState(true)
     const [items, setItems] = useState(["a", "b", "c"])
 
+    function handleClearing() {
+        setItems([])
+    }
+
     return (
         <section className="section-center">
             <form className="grocery-form">
@@ -17,7 +21,7 @@ function App() {
                 </div>
             </form>
             <div className="grocery-container">
-                <List items={items}/>
+                <List items={items} handleClearing={handleClearing}/>
             </div>
         </section>
     )
