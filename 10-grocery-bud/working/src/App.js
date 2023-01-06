@@ -7,7 +7,7 @@ function App() {
     const [alert, setAlert] = useState("")
     const [items, setItems] = useState([{id: 1, title: "a"}, {id: 2, title: "b"}, {id: 3, title: "c"}])
     const [value, setValue] = useState("")
-    const [editMode, setEditMode] = useState(false)
+    const [editing, setEditing] = useState("")
 
     useEffect(()=> {
         const timeout = setTimeout(()=> {
@@ -34,14 +34,14 @@ function App() {
             const item = items.find((item)=> {
                 return item.id === id
             })
-            setEditMode(true)
+            setEditing(item.id)
             setValue(item.title)
         }
     }
 
     function handleSubmit(e) {
         e.preventDefault()
-        if(editMode) {
+        if(editing) {
 
         } else {
             const newItem = {id: uuidv4(), title: value}
@@ -65,7 +65,7 @@ function App() {
                         onChange={(e)=> setValue(e.target.value)}
                     />
                     <button type="submit" className="submit-btn">
-                        {editMode ? "edit" : "submit"}
+                        {editing ? "edit" : "submit"}
                     </button>
                 </div>
             </form>
