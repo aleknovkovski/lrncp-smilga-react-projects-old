@@ -7,6 +7,7 @@ function App() {
     const [alert, setAlert] = useState("")
     const [items, setItems] = useState([{id: 1, title: "a"}, {id: 2, title: "b"}, {id: 3, title: "c"}])
     const [value, setValue] = useState("")
+    const [editMode, setEditMode] = useState(false)
 
     useEffect(()=> {
         const timeout = setTimeout(()=> {
@@ -30,7 +31,11 @@ function App() {
             setAlert("delete")
         }
         if(action==='edit'){
-            console.log('editing')
+            const item = items.find((item)=> {
+                return item.id === id
+            })
+            setEditMode(true)
+            setValue(item.title)
         }
     }
 
@@ -55,7 +60,9 @@ function App() {
                         value={value}
                         onChange={(e)=> setValue(e.target.value)}
                     />
-                    <button type="submit" className="submit-btn">submit</button>
+                    <button type="submit" className="submit-btn">
+                        {editMode ? "edit" : "submit"}
+                    </button>
                 </div>
             </form>
             <div className="grocery-container">
