@@ -12,6 +12,9 @@ function App() {
               <button type="submit" className="submit-btn">submit</button>
           </div>
         </form>
+        <div className="grocery-container">
+            <List />
+        </div>
       </section>
   )
 }
