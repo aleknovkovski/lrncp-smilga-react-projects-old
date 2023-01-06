@@ -1,15 +1,15 @@
 import React from 'react'
 import { FaEdit, FaTrash } from 'react-icons/fa'
-const List = ({items, handleClearing}) => {
+const List = ({items, handleClearing, handleChanges}) => {
     const itemsMarkup = items.map((item)=>{
         return (
             <article className="grocery-item">
                 <p className="title">{item.title}</p>
                 <div className="btn-container">
-                    <button className="edit-btn">
+                    <button className="edit-btn" onClick={handleChanges}>
                         <FaEdit/>
                     </button>
-                    <button className="delete-btn">
+                    <button className="delete-btn" onClick={handleChanges}>
                         <FaTrash/>
                     </button>
                 </div>

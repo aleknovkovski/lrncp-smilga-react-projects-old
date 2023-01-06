@@ -10,6 +10,10 @@ function App() {
         setItems([])
     }
 
+    function handleChanges() {
+        console.log('change requested')
+    }
+
     return (
         <section className="section-center">
             <form className="grocery-form">
@@ -21,7 +25,11 @@ function App() {
                 </div>
             </form>
             <div className="grocery-container">
-                <List items={items} handleClearing={handleClearing}/>
+                <List
+                    items={items}
+                    handleClearing={handleClearing}
+                    handleChanges={handleChanges}
+                />
             </div>
         </section>
     )
