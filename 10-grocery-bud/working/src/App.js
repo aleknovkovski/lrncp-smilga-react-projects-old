@@ -42,7 +42,14 @@ function App() {
     function handleSubmit(e) {
         e.preventDefault()
         if(editing) {
-
+            const item = items.find((item)=> {
+                return item.id === editing
+            })
+            const index = items.indexOf(item)
+            const updatedItem = {...item, title: value}
+            const newItems = [...items]
+            newItems[index] = updatedItem
+            setItems(newItems)
         } else {
             const newItem = {id: uuidv4(), title: value}
             setItems([...items, newItem])
