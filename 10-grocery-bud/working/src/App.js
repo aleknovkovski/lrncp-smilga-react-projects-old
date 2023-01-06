@@ -18,6 +18,7 @@ function App() {
                 return item.id !== id
             })
             setItems(newItems)
+            setAlert("delete")
         }
         if(action==='edit'){
             console.log('editing')
@@ -28,13 +29,14 @@ function App() {
         e.preventDefault()
         const newItem = {id: uuidv4(), title: value}
         setItems([...items, newItem])
+        setAlert("add")
         setValue("")
     }
 
     return (
         <section className="section-center">
             <form className="grocery-form" onSubmit={handleSubmit}>
-                {alert ? <Alert/> : null}
+                {alert ? <Alert type={alert}/> : null}
                 <h3>grocery bud</h3>
                 <div className="form-control">
                     <input
