@@ -5,6 +5,10 @@ const List = ({items}) => {
         return (
             <article className="grocery-item">
                 <p className="title">{item}</p>
+                <div className="btn-container">
+                    <button className="edit-btn"><FaEdit/></button>
+                    <button className="delete-btn"><FaTrash/></button>
+                </div>
             </article>
         )
     })
