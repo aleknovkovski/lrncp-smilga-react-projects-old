@@ -8,6 +8,15 @@ function App() {
     const [items, setItems] = useState([{id: 1, title: "a"}, {id: 2, title: "b"}, {id: 3, title: "c"}])
     const [value, setValue] = useState("")
 
+    useEffect(()=> {
+        const timeout = setTimeout(()=> {
+            setAlert("")
+        }, 3000)
+
+        return () => clearTimeout(timeout)
+
+    }, [alert])
+
     function handleClearing() {
         setItems([])
     }
