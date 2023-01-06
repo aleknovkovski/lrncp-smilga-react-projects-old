@@ -10,8 +10,13 @@ function App() {
         setItems([])
     }
 
-    function handleChanges() {
-        console.log('change requested')
+    function handleChanges(id, action) {
+        if(action==='delete'){
+            console.log('deleting')
+        }
+        if(action==='edit'){
+            console.log('editing')
+        }
     }
 
     return (
