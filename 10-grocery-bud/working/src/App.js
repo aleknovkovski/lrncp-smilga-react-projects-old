@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import List from './List'
 import Alert from './Alert'
+import {v4 as uuidv4 } from 'uuid'
 
 function App() {
     const [alerting, setAlerting] = useState(true)
@@ -25,6 +26,9 @@ function App() {
 
     function handleSubmit(e) {
         e.preventDefault()
+        const newItem = {id: uuidv4(), title: value}
+        setItems([...items, newItem])
+        setValue("")
     }
 
     return (
