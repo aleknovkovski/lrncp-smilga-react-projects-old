@@ -13,7 +13,7 @@ function App() {
           </div>
         </form>
         <div className="grocery-container">
-            <List />
+            <List items={["a", "b", "c"]}/>
         </div>
       </section>
   )
