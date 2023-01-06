@@ -23,9 +23,13 @@ function App() {
         }
     }
 
+    function handleSubmit(e) {
+        e.preventDefault()
+    }
+
     return (
         <section className="section-center">
-            <form className="grocery-form">
+            <form className="grocery-form" onSubmit={handleSubmit}>
                 {alerting ? <Alert/> : null}
                 <h3>grocery bud</h3>
                 <div className="form-control">
