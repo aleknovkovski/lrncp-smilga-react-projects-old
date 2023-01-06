@@ -50,6 +50,8 @@ function App() {
             const newItems = [...items]
             newItems[index] = updatedItem
             setItems(newItems)
+            setAlert("edit")
+            setEditing("")
         } else {
             const newItem = {id: uuidv4(), title: value}
             setItems([...items, newItem])
