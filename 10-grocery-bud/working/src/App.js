@@ -41,9 +41,13 @@ function App() {
 
     function handleSubmit(e) {
         e.preventDefault()
-        const newItem = {id: uuidv4(), title: value}
-        setItems([...items, newItem])
-        setAlert("add")
+        if(editMode) {
+
+        } else {
+            const newItem = {id: uuidv4(), title: value}
+            setItems([...items, newItem])
+            setAlert("add")
+        }
         setValue("")
     }
 
