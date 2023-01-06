@@ -7,7 +7,7 @@ function App() {
     const inputReference = useRef(null);
 
     const [alert, setAlert] = useState("")
-    const [items, setItems] = useState([{id: 1, title: "a"}, {id: 2, title: "b"}, {id: 3, title: "c"}])
+    const [items, setItems] = useState(JSON.parse(localStorage.getItem('items')))
     const [value, setValue] = useState("")
     const [editing, setEditing] = useState("")
 
@@ -23,6 +23,10 @@ function App() {
     useEffect(()=> {
         inputReference.current.focus();
     },[editing])
+
+    useEffect(()=> {
+        localStorage.setItem('items', JSON.stringify(items))
+    }, [items])
 
     function handleClearing() {
         setItems([])
