@@ -5,9 +5,11 @@ import {v4 as uuidv4 } from 'uuid'
 
 function App() {
     const inputReference = useRef(null);
+    const localItems = JSON.parse(localStorage.getItem('items'))
+    const defaultItems = localItems ? localItems : []
 
     const [alert, setAlert] = useState("")
-    const [items, setItems] = useState(JSON.parse(localStorage.getItem('items')))
+    const [items, setItems] = useState(defaultItems)
     const [value, setValue] = useState("")
     const [editing, setEditing] = useState("")
 
