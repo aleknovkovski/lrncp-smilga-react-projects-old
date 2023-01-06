@@ -12,7 +12,10 @@ function App() {
 
     function handleChanges(id, action) {
         if(action==='delete'){
-            console.log('deleting')
+            const newItems = items.filter((item)=> {
+                return item.id !== id
+            })
+            setItems(newItems)
         }
         if(action==='edit'){
             console.log('editing')
