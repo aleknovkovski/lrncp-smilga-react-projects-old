@@ -6,10 +6,16 @@ const List = ({items, handleClearing, handleChanges}) => {
             <article className="grocery-item" key={item.id}>
                 <p className="title">{item.title}</p>
                 <div className="btn-container">
-                    <button className="edit-btn" onClick={handleChanges}>
+                    <button
+                        className="edit-btn"
+                        onClick={()=> handleChanges(item.id, "edit")}
+                    >
                         <FaEdit/>
                     </button>
-                    <button className="delete-btn" onClick={handleChanges}>
+                    <button
+                        className="delete-btn"
+                        onClick={()=> handleChanges(item.id, "delete")}
+                    >
                         <FaTrash/>
                     </button>
                 </div>
