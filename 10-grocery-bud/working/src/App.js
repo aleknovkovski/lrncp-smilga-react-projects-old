@@ -3,11 +3,11 @@ import List from './List'
 import Alert from './Alert'
 import {v4 as uuidv4 } from 'uuid'
 
+const localItems = JSON.parse(localStorage.getItem('items'))
+const defaultItems = localItems ? localItems : []
+
 function App() {
     const inputReference = useRef(null);
-    const localItems = JSON.parse(localStorage.getItem('items'))
-    const defaultItems = localItems ? localItems : []
-
     const [alert, setAlert] = useState("")
     const [items, setItems] = useState(defaultItems)
     const [value, setValue] = useState("")
@@ -54,13 +54,11 @@ function App() {
     function handleSubmit(e) {
         e.preventDefault()
         if(editing) {
-            const item = items.find((item)=> {
-                return item.id === editing
+            const newItems = items.map((item)=>{
+                if(item.id === editing) {
+                    return {...item, title: value}
+                } else {return item}
             })
-            const index = items.indexOf(item)
-            const updatedItem = {...item, title: value}
-            const newItems = [...items]
-            newItems[index] = updatedItem
             setItems(newItems)
             setAlert("edit")
             setEditing("")
