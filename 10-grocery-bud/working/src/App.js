@@ -4,7 +4,7 @@ import Alert from './Alert'
 
 function App() {
     const [alerting, setAlerting] = useState(true)
-    const [items, setItems] = useState(["a", "b", "c"])
+    const [items, setItems] = useState([{id: 1, title: "a"}, {id: 2, title: "b"}, {id: 3, title: "c"}])
 
     function handleClearing() {
         setItems([])

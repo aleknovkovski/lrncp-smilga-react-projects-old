@@ -4,7 +4,7 @@ const List = ({items, handleClearing}) => {
     const itemsMarkup = items.map((item)=>{
         return (
             <article className="grocery-item">
-                <p className="title">{item}</p>
+                <p className="title">{item.title}</p>
                 <div className="btn-container">
                     <button className="edit-btn"><FaEdit/></button>
                     <button className="delete-btn"><FaTrash/></button>
