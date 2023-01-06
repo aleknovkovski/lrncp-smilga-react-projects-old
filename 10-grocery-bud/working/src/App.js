@@ -1,9 +1,11 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import List from './List'
 import Alert from './Alert'
 import {v4 as uuidv4 } from 'uuid'
 
 function App() {
+    const inputReference = useRef(null);
+
     const [alert, setAlert] = useState("")
     const [items, setItems] = useState([{id: 1, title: "a"}, {id: 2, title: "b"}, {id: 3, title: "c"}])
     const [value, setValue] = useState("")
@@ -17,6 +19,10 @@ function App() {
         return () => clearTimeout(timeout)
 
     }, [alert])
+
+    useEffect(()=> {
+        inputReference.current.focus();
+    },[editing])
 
     function handleClearing() {
         setItems([])
@@ -72,6 +78,7 @@ function App() {
                         placeholder="e.g. eggs"
                         value={value}
                         onChange={(e)=> setValue(e.target.value)}
+                        ref={inputReference}
                     />
                     <button type="submit" className="submit-btn">
                         {editing ? "edit" : "submit"}
