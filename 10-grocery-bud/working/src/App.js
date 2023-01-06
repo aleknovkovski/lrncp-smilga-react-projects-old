@@ -4,7 +4,7 @@ import Alert from './Alert'
 import {v4 as uuidv4 } from 'uuid'
 
 function App() {
-    const [alerting, setAlerting] = useState(true)
+    const [alert, setAlert] = useState("")
     const [items, setItems] = useState([{id: 1, title: "a"}, {id: 2, title: "b"}, {id: 3, title: "c"}])
     const [value, setValue] = useState("")
 
@@ -34,7 +34,7 @@ function App() {
     return (
         <section className="section-center">
             <form className="grocery-form" onSubmit={handleSubmit}>
-                {alerting ? <Alert/> : null}
+                {alert ? <Alert/> : null}
                 <h3>grocery bud</h3>
                 <div className="form-control">
                     <input
