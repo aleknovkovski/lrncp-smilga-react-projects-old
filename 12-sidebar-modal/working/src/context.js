@@ -9,3 +9,7 @@ export function AppProvider({children}) {
         </AppContext.Provider>
     )
 }
+
+export function useGlobalContext () {
+    return useContext(AppContext);
+};
