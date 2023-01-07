@@ -6,6 +6,9 @@ const Modal = () => {
         <div className={`modal-overlay show-modal`}>
             <div className='modal-container'>
                 <h3>modal content</h3>
+                <button className='close-modal-btn'>
+                    <FaTimes></FaTimes>
+                </button>
             </div>
         </div>
     )
