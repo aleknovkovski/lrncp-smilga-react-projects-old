@@ -20,12 +20,23 @@ export function AppProvider({children}) {
         setIsSubmenuOpen(false);
     };
 
+    const returnedValueObj = {
+        isSidebarOpen,
+        openSidebar,
+        closeSidebar,
+        isSubmenuOpen,
+        openSubmenu,
+        closeSubmenu,
+    }
+
+
     return (
-        <AppContext.Provider>
+        <AppContext.Provider value={returnedValueObj}>
             {children}
         </AppContext.Provider>
     );
 }
+
 
 export const useGlobalContext = () => {
     return useContext(AppContext);
