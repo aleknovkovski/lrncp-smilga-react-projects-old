@@ -20,8 +20,10 @@ export function AppProvider({children}) {
         setIsModalOpen(false);
     };
 
+    const returnedObject = {isSidebarOpen, isModalOpen, openModal, closeModal, openSidebar, closeSidebar}
+
     return (
-        <AppContext.Provider value="hello">
+        <AppContext.Provider value={returnedObject}>
             {children}
         </AppContext.Provider>
     )
