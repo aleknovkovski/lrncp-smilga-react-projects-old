@@ -13,10 +13,12 @@ const Submenu = () => {
         submenu.style.top = `${bottom-3}px`
     },[location])
 
+    const columnNumber = page.links.length > 3 ? 4 : page.links.length;
+
     return (
         <aside className={`${isSubmenuOpen ? 'submenu show' : 'submenu'}`}  ref={container}>
             <h4>{page.page}</h4>
-            <div className={`submenu-center col-2`}>
+            <div className={`submenu-center col-${columnNumber}`}>
                 {page.links.map((link, index) => {
                     const { url, icon, label } = link
                     return (
