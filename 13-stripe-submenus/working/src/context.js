@@ -13,7 +13,8 @@ export function AppProvider({children}) {
     const closeSidebar = () => {
         setIsSidebarOpen(false);
     };
-    const openSubmenu = () => {
+    const openSubmenu = (text, {center, bottom}) => {
+        console.log("received", text, center, bottom)
         setIsSubmenuOpen(true);
     };
     const closeSubmenu = () => {
