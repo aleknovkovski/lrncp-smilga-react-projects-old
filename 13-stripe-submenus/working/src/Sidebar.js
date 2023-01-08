@@ -6,7 +6,15 @@ import {useGlobalContext} from "./context";
 const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useGlobalContext()
 
-  return <h2>sidebar component</h2>
+  return (
+      <div className="sidebar-wrapper show">
+          <aside className='sidebar'>
+              <button className='close-btn'>
+                  <FaTimes />
+              </button>
+          </aside>
+      </div>
+  )
 }
 
 export default Sidebar
