@@ -16,6 +16,10 @@ export function AppProvider({children}) {
         setIsSidebarOpen(false);
     };
     const openSubmenu = (text, {center, bottom}) => {
+        const currentPage = sublinks.find((link)=> {
+            return link.page === text
+        })
+        console.log(currentPage)
         setLocation({center, bottom})
         setIsSubmenuOpen(true);
     };
