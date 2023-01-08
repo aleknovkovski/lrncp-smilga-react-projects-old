@@ -3,14 +3,14 @@ import {FaBars} from 'react-icons/fa'
 import {useGlobalContext} from "./context";
 
 const Home = () => {
-    const data = useGlobalContext()
-    console.log(data)
+    const {openModal} = useGlobalContext()
+
     return (
         <main>
             <button className='sidebar-toggle'>
                 <FaBars/>
             </button>
-            <button className='btn'>
+            <button className='btn' onClick={openModal}>
                 show modal
             </button>
         </main>
