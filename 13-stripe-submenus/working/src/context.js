@@ -29,6 +29,7 @@ export function AppProvider({children}) {
         isSubmenuOpen,
         openSubmenu,
         closeSubmenu,
+        location
     }
 
 
