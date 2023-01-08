@@ -1,4 +1,4 @@
-import React, { useState, useContext, useReducer, useEffect } from 'react'
+import React, {useState, useContext, useReducer, useEffect} from 'react'
 import cartItems from './data'
 import reducer from './reducer'
 // ATTENTION!!!!!!!!!!
@@ -6,22 +6,22 @@ import reducer from './reducer'
 const url = 'https://course-api.com/react-useReducer-cart-project'
 const AppContext = React.createContext()
 
-const AppProvider = ({ children }) => {
-  const [cart, setCart] = useState(cartItems)
+const AppProvider = ({children}) => {
+    const [cart, setCart] = useState(cartItems)
 
-  return (
-    <AppContext.Provider
-      value={{
-        cart,
-      }}
-    >
-      {children}
-    </AppContext.Provider>
-  )
+    return (
+        <AppContext.Provider
+            value={{
+                cart,
+            }}
+        >
+            {children}
+        </AppContext.Provider>
+    )
 }
 // make sure use
 export const useGlobalContext = () => {
-  return useContext(AppContext)
+    return useContext(AppContext)
 }
 
-export { AppContext, AppProvider }
+export {AppContext, AppProvider}
