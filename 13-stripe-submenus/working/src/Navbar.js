@@ -11,7 +11,7 @@ const Navbar = () => {
     const center = (buttonLoc.left + buttonLoc.right) / 2;
     const bottom = buttonLoc.bottom;
     console.log(buttonText, center, bottom)
-    openSubmenu()
+    openSubmenu(buttonText, {center, bottom})
   }
 
   return (
