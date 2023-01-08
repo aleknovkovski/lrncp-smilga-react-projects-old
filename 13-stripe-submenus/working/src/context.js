@@ -19,7 +19,7 @@ export function AppProvider({children}) {
         const currentPage = sublinks.find((link)=> {
             return link.page === text
         })
-        console.log(currentPage)
+        setPage(currentPage)
         setLocation({center, bottom})
         setIsSubmenuOpen(true);
     };
@@ -34,7 +34,8 @@ export function AppProvider({children}) {
         isSubmenuOpen,
         openSubmenu,
         closeSubmenu,
-        location
+        location,
+        page
     }
 
 
