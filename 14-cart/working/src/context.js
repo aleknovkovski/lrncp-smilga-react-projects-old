@@ -21,7 +21,6 @@ const AppProvider = ({children}) => {
     }
 
     function removeItem(itemID) {
-        alert(itemID)
         dispatch({type: 'REMOVE_ITEM', payload: {itemID}})
     }
 
