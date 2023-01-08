@@ -7,7 +7,8 @@ const Navbar = () => {
   const { openSidebar, openSubmenu, closeSubmenu } = useGlobalContext();
   function displaySubmenu(e) {
     const buttonText = e.target.textContent
-    console.log(buttonText)
+    const buttonLoc = e.target.getBoundingClientRect();
+    console.log(buttonText, buttonLoc)
     openSubmenu()
   }
 
