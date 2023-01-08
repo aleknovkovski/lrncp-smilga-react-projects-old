@@ -16,6 +16,8 @@ export function AppProvider({children}) {
     };
     const openSubmenu = (text, {center, bottom}) => {
         console.log("received", text, center, bottom)
+        setLocation({center, bottom})
+        console.log(location)
         setIsSubmenuOpen(true);
     };
     const closeSubmenu = () => {
