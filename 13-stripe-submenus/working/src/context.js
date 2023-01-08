@@ -7,6 +7,7 @@ export function AppProvider({children}) {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [isSubmenuOpen, setIsSubmenuOpen] = useState(true);
     const [location, setLocation] = useState({})
+    const [page, setPage] = useState({page: '', links: []})
 
     const openSidebar = () => {
         setIsSidebarOpen(true);
