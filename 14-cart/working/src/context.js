@@ -17,7 +17,7 @@ const AppProvider = ({children}) => {
     const [state, dispatch] = useReducer(reducer, initialState)
 
     useEffect(()=>{
-        console.log("Use effect ran due to cart update")
+        dispatch({type: 'CALCULATE_TOTALS'})
     }, [state.cart])
 
     function clearCart() {

@@ -3,6 +3,11 @@ function removeCartItem(currentCart, itemId) {
 }
 
 const reducer = (state, action) => {
+    if(action.type === 'CALCULATE_TOTALS') {
+        console.log('calculating totals...')
+        return state
+    }
+
     if(action.type === 'CLEAR_CART') {
         return {...state, cart: []}
     }
