@@ -3,6 +3,10 @@ function removeCartItem(currentCart, itemId) {
 }
 
 const reducer = (state, action) => {
+    if(action.type === 'DISPLAY_ITEMS') {
+        return {...state, cart: action.payload.items}
+    }
+
     if(action.type === 'CALCULATE_TOTALS') {
         let { cartTotal, cartAmount } = state.cart.reduce(
             (cartTotal, cartItem) => {

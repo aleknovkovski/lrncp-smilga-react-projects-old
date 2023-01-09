@@ -13,8 +13,17 @@ const initialState = {
     amount: 0,
 }
 
+
 const AppProvider = ({children}) => {
     const [state, dispatch] = useReducer(reducer, initialState)
+
+    function fetchItems() {
+        dispatch({type: "DISPLAY_ITEMS", payload: {items: []}})
+    }
+
+    useEffect(()=> {
+        fetchItems()
+    },[])
 
     useEffect(()=>{
         dispatch({type: 'CALCULATE_TOTALS'})
