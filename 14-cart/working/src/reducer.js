@@ -4,8 +4,17 @@ function removeCartItem(currentCart, itemId) {
 
 const reducer = (state, action) => {
     if(action.type === 'CALCULATE_TOTALS') {
-        console.log('calculating totals...')
-        return state
+        let { cartTotal, cartAmount } = state.cart.reduce(
+            (cartTotal, cartItem) => {
+                return cartTotal
+            },
+            {
+                cartTotal: 0,
+                cartAmount: 0,
+            }
+        )
+
+        return { ...state, total:cartTotal, amount:cartAmount }
     }
 
     if(action.type === 'CLEAR_CART') {
