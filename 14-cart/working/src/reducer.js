@@ -23,14 +23,19 @@ const reducer = (state, action) => {
     }
 
     if(action.type === 'DECREASE_ITEM') {
-        const newCart = state.cart.map((item)=> {
-            if(item.id === action.payload.itemID) {
-                if(item.amount>0) {
+        const item = state.cart.find((item)=> item.id === action.payload.itemID)
+        let newCart
+
+        if (item.amount > 1) {
+            newCart = state.cart.map((item)=> {
+                if(item.id === action.payload.itemID) {
                     return {...item, amount: item.amount -1}
-                }
-            }
-            return item
-        })
+                } else {return item}
+            })
+        } else {
+            newCart = removeCartItem(state.cart, action.payload.itemID)
+        }
+
         return {...state, cart: newCart}
     }
 
