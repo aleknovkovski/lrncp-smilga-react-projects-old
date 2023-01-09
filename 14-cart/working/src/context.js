@@ -17,8 +17,10 @@ const initialState = {
 const AppProvider = ({children}) => {
     const [state, dispatch] = useReducer(reducer, initialState)
 
-    function fetchItems() {
-        dispatch({type: "DISPLAY_ITEMS", payload: {items: []}})
+    async function fetchItems() {
+        const request = await fetch('https://course-api.com/react-useReducer-cart-project')
+        const items = await request.json()
+        dispatch({type: "DISPLAY_ITEMS", payload: {items}})
     }
 
     useEffect(()=> {
