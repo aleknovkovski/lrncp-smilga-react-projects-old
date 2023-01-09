@@ -1,12 +1,14 @@
+function removeCartItem(currentCart, itemId) {
+    return currentCart.filter((item)=> item.id !== itemId)
+}
+
 const reducer = (state, action) => {
     if(action.type === 'CLEAR_CART') {
         return {...state, cart: []}
     }
 
     if(action.type === 'REMOVE_ITEM') {
-        const newCart = state.cart.filter((item)=> {
-            return item.id !== action.payload.itemID
-        })
+        const newCart = removeCartItem(state.cart, action.payload.itemID)
         return {...state, cart: newCart}
     }
 
