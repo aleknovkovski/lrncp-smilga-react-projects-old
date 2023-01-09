@@ -7,7 +7,9 @@ const reducer = (state, action) => {
         let { cartTotal, cartAmount } = state.cart.reduce(
             (cartTotal, cartItem) => {
                 const { price, amount } = cartItem
+                const itemTotal = price * amount
 
+                cartTotal.cartTotal += itemTotal
                 cartTotal.cartAmount += amount
                 return cartTotal
             },
