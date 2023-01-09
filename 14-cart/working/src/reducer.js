@@ -18,7 +18,7 @@ const reducer = (state, action) => {
                 cartAmount: 0,
             }
         )
-
+        cartTotal = parseFloat(cartTotal.toFixed(2))
         return { ...state, total:cartTotal, amount:cartAmount }
     }
 
